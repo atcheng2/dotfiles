@@ -69,7 +69,7 @@ let g:ycm_min_num_of_chars_for_completion = 99
 " GoTo and Documentation
 nmap <C-]> :YcmCompleter GoTo<CR>
 nmap <leader>] :YcmCompleter GoTo<CR>
-let g:ycm_auto_hover=0
+let g:ycm_auto_hover=''
 nmap <leader>d <plug>(YCMHover)
 
 set completeopt-=preview
