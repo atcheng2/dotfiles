@@ -3,11 +3,12 @@
 
 """ Purist vim basic settings, note no tabreplacement ------------------------
 set nocompatible number hlsearch tabstop=4 shiftwidth=4 autoindent ignorecase
+set backspace=indent,eol,start
 
 " Remove annoying beep
 set visualbell t_vb=
 
-" Don't want to always save buffer
+" Don't want to always save on change buffer
 set hidden
 
 syntax on
