@@ -1,23 +1,4 @@
-""" Purist vim basic settings, note no tabreplacement -------------------------
-set nocompatible number hlsearch tabstop=4 shiftwidth=4 autoindent ignorecase
-
-" Remove annoying beep
-set visualbell t_vb=
-
-" Don't want to always save buffer
-set hidden
-
-syntax on
-
-""" Custom keystrokes ---------------------------------------------------------
-let mapleader = ","
-
-" Buffer management
-nmap <leader>l :bn<CR>
-nmap <leader>h :bp<CR>
-nmap <leader>q :bp <BAR> bd #<CR>
-
-
+so ~/.light.vim
 
 """ Plugin Managment ----------------------------------------------------------
 if empty(glob('~/.vim/autoload/plug.vim'))
@@ -67,7 +48,7 @@ let g:ycm_min_num_of_chars_for_completion = 99
 " let g:ycm_show_diagnostics_ui=0
 
 " GoTo and Documentation
-nmap <C-]> :YcmCompleter GoTo<CR>
+" nmap <C-]> :YcmCompleter GoTo<CR>
 nmap <leader>] :YcmCompleter GoTo<CR>
 let g:ycm_auto_hover=''
 nmap <leader>d <plug>(YCMHover)
