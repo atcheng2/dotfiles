@@ -1,16 +1,17 @@
 #!/bin/bash
 # Must be run as superuser
 
-# Required for kernel compilation
-apt install -y sudo git build-essential net-tools \
-	openssh-server bc python bison flex libelf-dev libssl-dev \
-	libncurses-dev dwarves
+apt install -y sudo git openssh-server
+
+# Required for kernel development
+apt install -y build-essential net-tools bison flex libelf-dev \
+	libssl-dev libncurses-dev dwarves python bc
 
 # Needed for kernel module development
 apt install -y linux-headers-`uname -r`
 
 # Required for vim
-apt install -y vim-gtk clang cmake curl python3 python3-dev
+apt install -y vim-gtk clang cmake cscope curl python3 python3-dev
 
 echo
 echo
