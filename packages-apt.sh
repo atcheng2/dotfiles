@@ -5,7 +5,10 @@ apt install -y sudo git openssh-server
 
 # Required for kernel development
 apt install -y build-essential net-tools bison flex libelf-dev \
-	libssl-dev libncurses-dev dwarves python bc
+	libssl-dev libncurses-dev dwarves bc
+
+# Might not need python
+# apt install -y python
 
 # Needed for kernel module development
 apt install -y linux-headers-`uname -r`
