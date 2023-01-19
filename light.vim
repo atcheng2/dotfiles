@@ -3,7 +3,7 @@
 
 """ Purist vim basic settings, note no tabreplacement ------------------------
 set nocompatible number hlsearch tabstop=4 shiftwidth=4 autoindent ignorecase 
-set incsearch
+set incsearch rnu
 
 " Allow deletion of newlines in insert mode
 set backspace=indent,eol,start
