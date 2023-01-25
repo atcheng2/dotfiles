@@ -14,8 +14,8 @@ set visualbell t_vb=
 " Don't want to always save on change buffer
 set hidden
 
-
 syntax on
+colorscheme desert
 
 """ Custom keystrokes --------------------------------------------------------
 let mapleader = ","
