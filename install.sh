@@ -12,6 +12,7 @@ ln -sf $dir/gitconfig ~/.gitconfig
 ln -sf $dir/tmux.conf ~/.tmux.conf
 
 # .config subdirectories
+mkdir ~/.config
 sudo rm -rf ~/.config/clangd
 ln -sf $dir/config/clangd ~/.config/clangd
 
