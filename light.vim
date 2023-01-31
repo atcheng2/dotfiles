@@ -3,7 +3,10 @@
 
 """ Purist vim basic settings, note no tabreplacement ------------------------
 set nocompatible number hlsearch tabstop=4 shiftwidth=4 autoindent ignorecase 
-set incsearch rnu textwidth=80 colorcolumn=+1
+set incsearch rnu textwidth=80 colorcolumn=+1 fo-=t
+
+""" Re-enable formatting 80 char limit for md and txt files
+autocmd BufRead,BufNewFile *.txt,*.md set fo+=t 
 
 " Allow deletion of newlines in insert mode
 set backspace=indent,eol,start
