@@ -1,3 +1,6 @@
 [user]
 	email = atc2150@columbia.edu
 	name = Andy Cheng
+
+[core]
+	excludesfile=~/.gitignore
