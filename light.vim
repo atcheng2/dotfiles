@@ -17,6 +17,9 @@ set visualbell t_vb=
 " Don't want to always save on change buffer
 set hidden
 
+" Mouse support is a friend
+set mouse=a
+
 syntax on
 colorscheme desert
 
