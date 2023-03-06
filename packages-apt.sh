@@ -4,8 +4,8 @@
 apt install -y sudo git openssh-server
 
 # Required for kernel development
-apt install -y build-essential net-tools bison flex libelf-dev \
-	libssl-dev libncurses-dev dwarves bc
+apt install -y build-essential net-tools bison flex libelf-dev libssl-dev
+    libncurses-dev dwarves bc
 
 # Might not need python2
 # apt install -y python
@@ -15,7 +15,7 @@ apt install -y linux-headers-`uname -r`
 
 ## Editing Environment
 # Required for vim
-apt install -y vim-gtk clang cmake cscope curl python3 python3-dev
+apt install -y vim-gtk clang cmake cscope curl python3 python3-dev clang-format
 
 # tmux and other management
 apt install -y tmux

@@ -18,14 +18,21 @@ endfunction
 "" Plugins
 call plug#begin('~/.vim/plugged')
 
+" Status line
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 
+" Might switch to CoC or ALE
 Plug 'Valloric/YouCompleteMe', { 'do': function('BuildYCM') }
 
+" File tree listing
 Plug 'scrooloose/nerdtree'
 
+" File search
 Plug 'kien/ctrlp.vim'
+
+" C/C++ Formatting
+Plug 'rhysd/vim-clang-format'
 
 call plug#end()
 
@@ -76,3 +83,11 @@ if empty(glob('~/.vim/plugin/cscope_maps.vim'))
 	silent !wget http://cscope.sourceforge.net/cscope_maps.vim
 				\ -O ~/.vim/plugin/cscope_maps.vim
 endif
+
+"" clang-format
+
+" Format on save
+autocmd FileType c ClangFormatAutoEnable
+
+" Check for .clang-format file
+let g:clang_format#deduct_style_file = 1
