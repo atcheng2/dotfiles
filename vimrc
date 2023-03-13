@@ -22,8 +22,8 @@ call plug#begin('~/.vim/plugged')
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 
-" Might switch to CoC or ALE
-Plug 'Valloric/YouCompleteMe', { 'do': function('BuildYCM') }
+" Minimalist Language Client
+Plug 'natebosch/vim-lsc'
 
 " File tree listing
 Plug 'scrooloose/nerdtree'
@@ -43,24 +43,34 @@ call plug#end()
 let g:airline_theme='powerlineish'
 let g:airline#extensions#tabline#enabled = 1
 
-"" YCM
-let g:ycm_complete_in_comments_and_strings=1
-let g:ycm_key_list_select_completion=['<C-n>', '<TAB>']
-let g:ycm_key_list_previous_completion=['<C-p>', '<S-TAB>']
-let g:ycm_autoclose_preview_window_after_completion=1
+" LSC
+let g:lsc_server_commands = {
+			\ 'c': {'command': 'clangd --background-index',
+			\       'suppress_stderr': v:true},
+			\ 'cpp': {'command': 'clangd --background-index',
+			\       'suppress_stderr': v:true},
+			\ }
+let g:lsc_enable_autocomplete = v:true
 
-" Remove automatic completion popup
-let g:ycm_min_num_of_chars_for_completion = 99
-
-" Remove all diagnostics
-" let g:ycm_show_diagnostics_ui=0
+let g:lsc_auto_map = {
+    \ 'GoToDefinition': '<leader>]',
+    \ 'GoToDefinitionSplit': ['<C-W>]', '<C-W><leader>]'],
+    \ 'FindReferences': '<leader>r',
+    \ 'NextReference': '<C-n>',
+    \ 'PreviousReference': '<C-p>',
+    \ 'FindImplementations': '<leader>I',
+    \ 'FindCodeActions': '<leader>a',
+    \ 'Rename': '<leader>R',
+    \ 'ShowHover': v:true,
+    \ 'DocumentSymbol': 'go',
+    \ 'WorkspaceSymbol': 'gS',
+    \ 'SignatureHelp': 'gm',
+    \ 'Completion': 'completefunc',
+    \}
 
 " GoTo and Documentation
-" nmap <C-]> :YcmCompleter GoTo<CR>
-nmap <leader>] :YcmCompleter GoTo<CR>
-let g:ycm_auto_hover=''
-nmap <leader>d <plug>(YCMHover)
-
+" nmap <leader>d <plug>(YCMHover)
+"
 set completeopt-=preview
 
 "" Nerdtree
