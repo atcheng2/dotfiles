@@ -17,4 +17,7 @@ mkdir -p ~/.config
 sudo rm -rf ~/.config/clangd
 ln -sf "$dir/config/clangd" ~/.config/clangd
 
+sudo rm -rf ~/.config/nvim
+ln -sf "$dir/config/nvim" ~/.config/nvim
+
 echo "Done"
