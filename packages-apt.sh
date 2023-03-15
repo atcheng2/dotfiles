@@ -15,7 +15,7 @@ apt install -y linux-headers-`uname -r`
 
 ## Editing Environment
 # Required for vim
-apt install -y vim-gtk clang cmake cscope curl python3 python3-dev clang-format
+apt install -y vim clang cmake cscope curl python3 python3-dev clang-format
 
 # tmux and other management
 apt install -y tmux
@@ -26,3 +26,9 @@ echo "Choose vim-gtk"
 echo
 echo
 update-alternatives --config vim
+
+echo
+echo
+echo "Install latest version of clangd and use update-alternatives"
+echo
+echo
