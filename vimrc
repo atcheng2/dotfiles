@@ -80,9 +80,3 @@ let g:ctrlp_custom_ignore = {
 
 let g:ctrlp_working_path_mode = 'r'
 
-if empty(glob('~/.vim/plugin/cscope_maps.vim'))
-	silent !mkdir -p ~/.vim/plugin
-	silent !wget http://cscope.sourceforge.net/cscope_maps.vim
-				\ -O ~/.vim/plugin/cscope_maps.vim
-endif
-
