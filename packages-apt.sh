@@ -15,7 +15,7 @@ apt install -y linux-headers-`uname -r`
 
 ## Editing Environment
 # Required for vim
-apt install -y vim clang cmake cscope curl python3 python3-dev clang-format
+apt install -y vim cmake curl python3 python3-dev clang-format
 
 # tmux and other management
 apt install -y tmux
