@@ -8,13 +8,6 @@ if empty(glob('~/.vim/autoload/plug.vim'))
 	autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
 
-" Add language servers as necessary
-" function! BuildYCM(info)
-" 	if a:info.status == 'installed' || a:info.force
-" 		!./install.py --clangd-completer --rust-completer
-" 	endif
-" endfunction
-
 "" Plugins
 call plug#begin('~/.vim/plugged')
 
@@ -23,7 +16,6 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 
 " Might switch to CoC or ALE
-" Plug 'Valloric/YouCompleteMe', { 'do': function('BuildYCM') }
 Plug 'dense-analysis/ale'
 
 " File tree listing
@@ -31,10 +23,6 @@ Plug 'scrooloose/nerdtree'
 
 " File search
 Plug 'kien/ctrlp.vim'
-
-" C/C++ Formatting
-" ALE might make this unnecessary
-Plug 'rhysd/vim-clang-format'
 
 call plug#end()
 
@@ -98,10 +86,3 @@ if empty(glob('~/.vim/plugin/cscope_maps.vim'))
 				\ -O ~/.vim/plugin/cscope_maps.vim
 endif
 
-"" clang-format
-
-" Format on save
-autocmd FileType c ClangFormatAutoEnable
-
-" Check for .clang-format file
-let g:clang_format#deduct_style_file = 1
