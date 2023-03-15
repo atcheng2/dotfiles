@@ -45,28 +45,37 @@ call plug#end()
 let g:airline_theme='powerlineish'
 let g:airline#extensions#tabline#enabled = 1
 
-" ALE integration
+"" ALE
+
+" Airline Integration
 let g:airline#extensions#ale#enabled = 1
 
-"" YCM
-" let g:ycm_complete_in_comments_and_strings=1
-" let g:ycm_key_list_select_completion=['<C-n>', '<TAB>']
-" let g:ycm_key_list_previous_completion=['<C-p>', '<S-TAB>']
-" let g:ycm_autoclose_preview_window_after_completion=1
-" 
-" " Remove automatic completion popup
-" let g:ycm_min_num_of_chars_for_completion = 99
-" 
-" " Remove all diagnostics
-" " let g:ycm_show_diagnostics_ui=0
-" 
-" " GoTo and Documentation
-" " nmap <C-]> :YcmCompleter GoTo<CR>
-" nmap <leader>] :YcmCompleter GoTo<CR>
-" let g:ycm_auto_hover=''
-" nmap <leader>d <plug>(YCMHover)
-" 
-" set completeopt-=preview
+let g:ale_linters_explicit = 1
+let g:ale_linters = {
+			\ 'c': ['clangd'],
+			\ 'cpp': ['clangd']
+			\ }
+
+let g:ale_fixers = {
+			\ 'c': ['clang-format'],
+			\ 'cpp': ['clang-format']
+			\ }
+
+let g:ale_c_clangformat_options = '--fallback-style="microsoft"'
+
+let g:ale_virtualtext_cursor = 'current'
+let g:ale_virtualtext_delay = 0
+
+let g:ale_sign_error = ':('
+let g:ale_sign_warning = ':/'
+
+let g:ale_completion_enabled = 1
+
+nmap <leader>] :ALEGoToDefinition<CR>
+nmap <leader>d :ALEHover<CR>
+nmap <leader>r :ALEFindReferences<CR>
+nmap <leader>/ :ALESymbolSearch 
+nmap <leader>R :ALERename<CR>
 
 "" Nerdtree
 autocmd StdinReadPre * let s:std_in=1
