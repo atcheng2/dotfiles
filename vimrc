@@ -26,6 +26,12 @@ Plug 'scrooloose/nerdtree'
 " File search
 Plug 'kien/ctrlp.vim'
 
+" Git Integration
+Plug 'tpope/vim-fugitive'
+
+" Comment Lines
+Plug 'tpope/vim-commentary'
+
 call plug#end()
 
 
@@ -94,4 +100,10 @@ let g:ctrlp_custom_ignore = {
 	\ }
 
 let g:ctrlp_working_path_mode = 'r'
+
+"" Fugitive
+" Nothing yet
+
+"" Commentary
+" Nothing here
 
