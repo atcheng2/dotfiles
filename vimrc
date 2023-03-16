@@ -15,8 +15,10 @@ call plug#begin('~/.vim/plugged')
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 
-" Might switch to CoC or ALE
+" LSP and Autocompletion
 Plug 'dense-analysis/ale'
+Plug 'prabirshrestha/asyncomplete.vim'
+Plug 'andreypopp/asyncomplete-ale.vim'
 
 " File tree listing
 Plug 'scrooloose/nerdtree'
@@ -34,7 +36,6 @@ let g:airline_theme='powerlineish'
 let g:airline#extensions#tabline#enabled = 1
 
 "" ALE
-
 " Airline Integration
 let g:airline#extensions#ale#enabled = 1
 
@@ -57,13 +58,27 @@ let g:ale_virtualtext_delay = 0
 let g:ale_sign_error = ':('
 let g:ale_sign_warning = ':/'
 
-let g:ale_completion_enabled = 1
+" Let asyncomplete.vim handle autocompletion
+let g:ale_completion_enabled = 0
 
 nmap <leader>] :ALEGoToDefinition<CR>
 nmap <leader>d :ALEHover<CR>
 nmap <leader>r :ALEFindReferences<CR>
 nmap <leader>/ :ALESymbolSearch 
 nmap <leader>R :ALERename<CR>
+
+"" Asyncomplete
+" Remap <enter> to choose a autocomplete candidate
+inoremap <expr> <cr>    pumvisible() ? asyncomplete#close_popup() : "\<cr>"
+
+imap <c-@> <Plug>(asyncomplete_force_refresh)
+
+" Ale integration
+au User asyncomplete_setup
+			\ call asyncomplete#register_source(
+			\ asyncomplete#sources#ale#get_source_options({
+			\ 'priority': 10
+			\ }))
 
 "" Nerdtree
 autocmd StdinReadPre * let s:std_in=1
