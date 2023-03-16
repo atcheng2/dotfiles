@@ -23,6 +23,9 @@ set mouse=a
 syntax on
 colorscheme desert
 
+" Make the popup menu color softer
+highlight Pmenu ctermbg=gray guibg=gray
+
 """ Custom keystrokes --------------------------------------------------------
 let mapleader = ","
 
