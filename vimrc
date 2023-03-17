@@ -11,6 +11,9 @@ endif
 "" Plugins
 call plug#begin('~/.vim/plugged')
 
+" Deep space colorscheme
+Plug 'tyrannicaltoucan/vim-deep-space'
+
 " Status line
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
@@ -37,8 +40,14 @@ call plug#end()
 
 """ Plugin Settings ----------------------------------------------------------
 
+"" Deep Space
+set background=dark
+set termguicolors
+colorscheme deep-space
+let g:deepspace_italics=1
+
 "" Airline
-let g:airline_theme='powerlineish'
+let g:airline_theme='deep_space'
 let g:airline#extensions#tabline#enabled = 1
 
 "" ALE
