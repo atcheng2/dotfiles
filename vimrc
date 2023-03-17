@@ -11,12 +11,20 @@ endif
 "" Plugins
 call plug#begin('~/.vim/plugged')
 
-" Deep space colorscheme
-Plug 'tyrannicaltoucan/vim-deep-space'
+" " Deep space colorscheme
+" Plug 'tyrannicaltoucan/vim-deep-space'
+
+" " Iceberg colorscheme
+" Plug 'cocopon/iceberg.vim'
+
+" " Hivacruz theme
+" Plug 'kinoute/vim-hivacruz-theme'
+
+" One half dark theme
+Plug 'sonph/onehalf', {'rtp': 'vim'}
 
 " Status line
 Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
 
 " LSP and Autocompletion
 Plug 'dense-analysis/ale'
@@ -40,14 +48,11 @@ call plug#end()
 
 """ Plugin Settings ----------------------------------------------------------
 
-"" Deep Space
-set background=dark
-set termguicolors
-colorscheme deep-space
-let g:deepspace_italics=1
+"" One half dark
+colorscheme onehalfdark
+let g:airline_theme='onehalfdark'
 
 "" Airline
-let g:airline_theme='deep_space'
 let g:airline#extensions#tabline#enabled = 1
 
 "" ALE

@@ -21,6 +21,10 @@ set hidden
 set mouse=a
 
 syntax on
+
+" Default colorscheme
+set termguicolors
+set background=dark
 colorscheme desert
 
 " Make the popup menu color softer
