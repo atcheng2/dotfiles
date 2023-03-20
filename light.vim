@@ -17,8 +17,8 @@ set visualbell t_vb=
 " Don't want to always save on change buffer
 set hidden
 
-" Mouse support is a friend
-set mouse=a
+" Mouse support is not your friend :/
+set mouse=
 
 syntax on
 
