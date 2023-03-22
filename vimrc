@@ -115,6 +115,8 @@ let g:ctrlp_custom_ignore = {
 
 let g:ctrlp_working_path_mode = 'r'
 
+let g:ctrlp_max_files=100000
+
 "" Fugitive
 " Nothing yet
 
