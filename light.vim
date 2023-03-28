@@ -5,6 +5,9 @@
 set nocompatible number hlsearch tabstop=4 shiftwidth=4 autoindent ignorecase 
 set incsearch rnu textwidth=80 colorcolumn=+1 fo-=t
 
+" Disable commands that start with <esc> in insert mode
+set noek
+
 """ Re-enable formatting 80 char limit for md and txt files
 autocmd BufRead,BufNewFile *.txt,*.md set fo+=t 
 
