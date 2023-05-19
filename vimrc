@@ -56,8 +56,13 @@ let g:airline_theme='onehalfdark'
 let g:airline#extensions#tabline#enabled = 1
 
 "" vim-lsp
+let g:lsp_diagnostics_signs_error = {'text': ':('}
+let g:lsp_diagnostics_signs_warning = {'text': ':/'}
+
 let g:lsp_diagnostics_echo_cursor = 1
 let g:lsp_diagnostics_echo_delay = 100
+
+let g:lsp_signature_help_delay = 100
 
 if executable('clangd')
 	au User lsp_setup call lsp#register_server({
@@ -73,7 +78,7 @@ function! s:on_lsp_buffer_enabled() abort
     if exists('+tagfunc') | setlocal tagfunc=lsp#tagfunc | endif
     nmap <buffer> <leader>] <plug>(lsp-definition)
     nmap <buffer> <leader>s <plug>(lsp-document-symbol-search)
-    nmap <buffer> <leader>S <plug>(lsp-workspace-symbol-search)
+    nmap <buffer> <leader>/ <plug>(lsp-workspace-symbol-search)
     nmap <buffer> <leader>r <plug>(lsp-references)
     nmap <buffer> <leader>i <plug>(lsp-implementation)
     nmap <buffer> <leader>t <plug>(lsp-type-definition)
