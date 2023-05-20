@@ -43,6 +43,9 @@ Plug 'tpope/vim-fugitive'
 " Comment Lines
 Plug 'tpope/vim-commentary'
 
+" Check health!
+Plug 'rhysd/vim-healthcheck'
+
 call plug#end()
 
 
@@ -67,7 +70,8 @@ let g:lsp_signature_help_delay = 100
 if executable('clangd')
 	au User lsp_setup call lsp#register_server({
 				\ 'name': 'clangd',
-				\ 'cmd': {server_info->['clangd', '-background-index']},
+				\ 'cmd': {server_info->['clangd', '--background-index',
+				\                       '--fallback-style="microsoft"']},
 				\ 'whitelist': ['c', 'cpp', 'objc', 'objcpp'],
 				\ })
 endif
