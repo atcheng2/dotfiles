@@ -35,7 +35,7 @@ Plug 'prabirshrestha/asyncomplete-lsp.vim'
 Plug 'scrooloose/nerdtree'
 
 " File search
-Plug 'kien/ctrlp.vim'
+Plug 'junegunn/fzf', {'do': { -> fzf#install() }}
 
 " Git Integration
 Plug 'tpope/vim-fugitive'
@@ -114,15 +114,8 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isT
 map <C-n> :NERDTreeToggle<CR>
 nmap <leader>n :NERDTreeFind<CR>
 
-"" Ctrl-P
-let g:ctrlp_custom_ignore = {
-	\ 'dir': '\v[\/](\.(git|hg|svn)|\_site)$',
-	\ 'file': '\v\.(exe\so\dll\class\png\jpg\jpeg)$'
-	\ }
-
-let g:ctrlp_working_path_mode = 'r'
-
-let g:ctrlp_max_files=100000
+"" FZF
+nmap <C-p> :FZF<CR>
 
 "" Fugitive
 " Nothing yet
