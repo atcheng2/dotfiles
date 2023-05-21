@@ -1,3 +1,6 @@
+""""" Installation of all language servers via vim-lsp
+
+""" Language servers -----------------------------------------------------------
 if executable('clangd')
     au User lsp_setup call lsp#register_server({
 		\ 'name': 'clangd',
@@ -7,6 +10,7 @@ if executable('clangd')
 		\ })
 endif
 
+""" Installation function ------------------------------------------------------
 function! s:on_lsp_buffer_enabled() abort
     setlocal omnifunc=lsp#complete
     setlocal signcolumn=yes
@@ -27,3 +31,4 @@ augroup lsp_install
     au!
     autocmd User lsp_buffer_enabled call s:on_lsp_buffer_enabled()
 augroup END
+

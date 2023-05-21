@@ -20,3 +20,4 @@ sudo rm -rf ~/.config/clangd
 ln -sf "$dir/config/clangd" ~/.config/clangd
 
 echo "Done"
+
