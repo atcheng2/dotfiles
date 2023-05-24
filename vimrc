@@ -46,6 +46,9 @@ Plug 'tpope/vim-commentary'
 " Check health!
 Plug 'rhysd/vim-healthcheck'
 
+" Multi-cursor support
+Plug 'mg979/vim-visual-multi'
+
 call plug#end()
 
 
@@ -91,4 +94,12 @@ nmap <C-p> :FZF<CR>
 
 "" Commentary
 " Nothing here
+
+"" Check Health
+" Nothing :)
+
+"" Multi cursor
+let g:VM_maps = {}
+let g:VM_maps['Find Under'] = '<C-d>'
+let g:VM_maps['Find Subword Under'] = '<C-d>'
 
