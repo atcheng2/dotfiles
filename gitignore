@@ -1,4 +1,6 @@
 **/*.swp
 **/compile_commands.json
 **/.clangd
+**/.svlangserver
+**/.cache
 

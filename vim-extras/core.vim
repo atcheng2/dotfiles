@@ -79,6 +79,8 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isT
 map <C-n> :NERDTreeToggle<CR>
 nmap <leader>n :NERDTreeFind<CR>
 
+let g:NERDTreeWinPos = "right"
+
 "" FZF
 nmap <C-p> :FZF<CR>
 
