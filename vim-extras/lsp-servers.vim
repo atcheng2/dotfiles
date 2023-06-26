@@ -10,6 +10,22 @@ if executable('clangd')
 		\ })
 endif
 
+if executable('pylsp')
+    au User lsp_setup call lsp#register_server({
+		\ 'name': 'pylsp',
+		\ 'cmd': {server_info->['pylsp']},
+		\ 'allowlist': ['python'],
+		\ })
+endif
+
+if executable('svlangserver')
+    au User lsp_setup call lsp#register_server({
+		\ 'name': 'svlang',
+		\ 'cmd': {server_info->['svlangserver']},
+		\ 'allowlist': ['verilog', 'systemverilog'],
+		\ })
+endif
+
 """ Installation function ------------------------------------------------------
 function! s:on_lsp_buffer_enabled() abort
     setlocal omnifunc=lsp#complete
