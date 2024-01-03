@@ -40,7 +40,7 @@ function! s:on_lsp_buffer_enabled() abort
     nmap <buffer> <leader>R <plug>(lsp-rename)
     nmap <buffer> [g <plug>(lsp-previous-diagnostic)
     nmap <buffer> ]g <plug>(lsp-next-diagnostic)
-    nmap <buffer> K <plug>(lsp-hover)
+    nmap <buffer> <leader>d <plug>(lsp-hover)
     nmap <buffer> <leader>f <plug>(lsp-document-range-format)
     vmap <buffer> <leader>f <plug>(lsp-document-range-format)
     nmap <buffer> <leader>F <plug>(lsp-document-format)
