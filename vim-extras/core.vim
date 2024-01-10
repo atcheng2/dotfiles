@@ -31,6 +31,9 @@ Plug 'prabirshrestha/vim-lsp'
 Plug 'prabirshrestha/asyncomplete.vim'
 Plug 'prabirshrestha/asyncomplete-lsp.vim'
 
+" Linting
+Plug 'dense-analysis/ale'
+
 " File tree listing
 Plug 'scrooloose/nerdtree'
 
@@ -71,6 +74,9 @@ inoremap <expr> <cr>    pumvisible() ? asyncomplete#close_popup() : "\<cr>"
 
 " ctrl+space
 imap <c-@> <Plug>(asyncomplete_force_refresh)
+
+"" ALE
+ru extras/ale-config.vim
 
 "" Nerdtree
 autocmd StdinReadPre * let s:std_in=1
