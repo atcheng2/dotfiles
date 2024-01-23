@@ -6,6 +6,7 @@ dir=$( cd "$(dirname "${BASH_SOURCE[0]}")" ; pwd -P )
 echo "Linking dotfiles..."
 
 ln -sf "$dir/bash_aliases" ~/.bash_aliases
+ln -sf "$dir/bash_extras" ~/.bash_extras
 ln -sf "$dir/gitconfig" ~/.gitconfig
 ln -sf "$dir/gitignore" ~/.gitignore
 ln -sf "$dir/tmux.conf" ~/.tmux.conf
