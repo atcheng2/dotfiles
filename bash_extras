@@ -2,7 +2,7 @@
 # Should source this file inside .bashrc
 
 # Autostart the ssh-agent
-if [ -z "$(pgrep ssh-agent)" ]; then
+if [ -n "$(pgrep ssh-agent)" ]; then
     rm -rf /tmp/ssh-*
     eval $(ssh-agent -s) > /dev/null
 else
