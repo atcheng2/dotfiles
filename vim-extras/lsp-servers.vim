@@ -6,7 +6,7 @@ if executable('clangd')
 		\ 'name': 'clangd',
 		\ 'cmd': {server_info->['clangd', '--background-index',
 		\                       '--fallback-style="microsoft"']},
-		\ 'whitelist': ['c', 'cpp', 'objc', 'objcpp'],
+		\ 'allowlist': ['c', 'cpp', 'objc', 'objcpp'],
 		\ })
 endif
 
