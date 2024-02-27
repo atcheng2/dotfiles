@@ -8,3 +8,5 @@ alias cvim='vim -u ~/.vim/extras/clear.vim'
 
 alias sagent='eval $(ssh-agent -s)'
 
+alias gototest='cd ~/linux-stable/tools/testing/selftests/bpf/'
+alias run='sudo LD_LIBRARY_PATH=/users/atc2150/linux-stable/tools/lib/bpf/'

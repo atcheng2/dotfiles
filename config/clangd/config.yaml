@@ -3,4 +3,4 @@ CompileFlags:
     -fno-allow-store-data-races, -fconserve-stack, -mrecord-mcount,
     -mfunction-return=*, -mskip-rax-setup, -mno-fp-ret-in-387,
     -fno-var-tracking-assignments, -femit-struct-debug-baseonly,
-    -mabi=lp64 ]
+    -mabi=lp64, -fsanitize=* ]

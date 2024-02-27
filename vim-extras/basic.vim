@@ -2,8 +2,8 @@
 """"" This file should be sourced by any .vimrc file used
 
 """ Purist vim basic settings, note no tabreplacement --------------------------
-set nocompatible number hlsearch tabstop=8 shiftwidth=4 autoindent ignorecase 
-set incsearch rnu textwidth=80 colorcolumn=81,101 fo-=t scrolloff=5 expandtab
+set nocompatible number hlsearch tabstop=8 shiftwidth=8 autoindent ignorecase 
+set incsearch rnu textwidth=80 colorcolumn=81,101 fo-=t scrolloff=5 
 set smarttab
 
 " Disable commands that start with <esc> in insert mode
