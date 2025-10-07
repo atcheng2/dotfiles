@@ -1,6 +1,8 @@
 #!/bin/bash
 # Installs symlinks for dotfiles
 
+os=$(uname -s)
+
 dir=$( cd "$(dirname "${BASH_SOURCE[0]}")" ; pwd -P )
 
 echo "Linking dotfiles..."
@@ -16,9 +18,12 @@ ln -sf "$dir/vimrc" ~/.vimrc
 ln -sf "$dir/vim-extras" ~/.vim/extras
 
 # .config subdirectories
-mkdir -p ~/.config
-sudo rm -rf ~/.config/clangd
-ln -sf "$dir/config/clangd" ~/.config/clangd
+if [[ "$os" == "Linux" ]]; then
+    mkdir -p ~/.config
+    ln -sf "$dir/config/clangd" ~/.config/clangd
+elif [[ "$os" == "Darwin" ]]; then
+    ln -sf "$dir/config/clangd" ~/Library/Preferences/clangd
+fi
 
 echo "Done"
 
