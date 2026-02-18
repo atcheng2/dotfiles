@@ -1,12 +1,57 @@
 #!/bin/bash
 # Should source this file inside .bashrc
 
-# Autostart the ssh-agent
-if [ -z "$(pgrep ssh-agent)" ]; then
-    rm -rf /tmp/ssh-*
-    eval $(ssh-agent -s) > /dev/null
+# OS specific configuration
+if [[ "$(uname -s)" == "Linux" ]] && grep -q -i microsoft /proc/version; then
+    os="wsl"
+elif [[ "$(uname -s)" == "Linux" ]]; then
+    os="linux"
+elif [[ "$(uname -s)" == "Darwin" ]]; then
+    os="macos"
 else
-    export SSH_AGENT_PID=$(pgrep ssh-agent)
-    export SSH_AUTH_SOCK=$(find /tmp/ssh-* -name agent.*)
+    os="unknown"
 fi
 
+# Autostart the ssh-agent in WSL
+if [[ "$os" == "wsl" ]]; then
+    if [ -z "$(pgrep ssh-agent)" ]; then
+        rm -rf /tmp/ssh-*
+        eval $(ssh-agent -s) > /dev/null
+    else
+        export SSH_AGENT_PID=$(pgrep ssh-agent)
+        export SSH_AUTH_SOCK=$(find /tmp/ssh-* -name agent.*)
+    fi
+fi
+
+function venv {
+    local venv_dir=".venv"
+
+    if [ -n "$VIRTUAL_ENV" ]; then
+        echo "Deactivating currently active virtual environment..."
+        deactivate
+    fi
+
+    if [ -d "$venv_dir" ]; then
+        if [ -f "$venv_dir/bin/activate" ]; then
+            echo "Activating virtual environment in '$venv_dir'..."
+            source "$venv_dir/bin/activate"
+            echo "Activated: $(python3 --version)"
+        else
+            echo "Found directory '$venv_dir', but it doesn't look like a valid venv."
+            return 1
+        fi
+    else
+        read -r -p "No .venv found. Create one? [y/N]: " response
+        case "$response" in
+            [yY][eE][sS]|[yY])
+                echo "Creating new virtual environment in '$venv_dir'..."
+                python3 -m venv "$venv_dir" || { echo "Failed to create venv."; return 1; }
+                source "$venv_dir/bin/activate"
+                echo "Activated: $(python3 --version)"
+                ;;
+            *)
+                echo "No virtual environment activated."
+                ;;
+        esac
+    fi
+}

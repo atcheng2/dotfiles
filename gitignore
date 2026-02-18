@@ -1,6 +1,9 @@
 **/*.swp
+**/.*.swp
 **/compile_commands.json
 **/.clangd
 **/.svlangserver
 **/.cache
+**/.DS_Store
+**/non-repo-files/
 

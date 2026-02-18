@@ -24,6 +24,27 @@ set hidden
 " Mouse support is not your friend :/
 set mouse=
 
+" Check for external editing of file when regaining focus.
+set autoread
+
+"" Latex filetype fix
+autocmd BufReadPost,BufNewFile *.tex set filetype=tex
+
+let g:auto_check_time_enabled = 1
+
+function! s:ToggleableCheckTime()
+  if g:auto_check_time_enabled
+    silent checktime
+  endif
+endfunction
+
+augroup ToggleableCheckTimeGroup
+  autocmd!
+  autocmd FocusGained,BufEnter,CursorHold,CursorHoldI * call s:ToggleableCheckTime()
+augroup END
+
+command! ToggleAutoCheckTime let g:auto_check_time_enabled = !g:auto_check_time_enabled | echo "Auto file checking is now" (g:auto_check_time_enabled ? "ON" : "OFF")
+
 syntax on
 
 " Default colorscheme
