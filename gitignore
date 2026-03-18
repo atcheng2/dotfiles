@@ -6,4 +6,4 @@
 **/.cache
 **/.DS_Store
 **/non-repo-files/
-
+**/.env
