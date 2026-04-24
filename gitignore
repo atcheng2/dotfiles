@@ -7,3 +7,8 @@
 **/.DS_Store
 **/non-repo-files/
 **/.env
+**/.gemini
+**/.pi/sessions/
+**/.pi/npm/
+**/.pi/git/
+**/.pi/extensions/**/node_modules/
